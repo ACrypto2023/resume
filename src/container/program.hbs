@@ -12,7 +12,6 @@
           {{country}}
         {{/with}}
         <date>{{date}}</date>
-        
         <ul>
         <h4>Program:
           {{#each program}} </h4>
@@ -33,11 +32,9 @@
                   {{address}}, {{city}}, {{country}}
                 {{/with}}
                 <br/>
-                
-                Exhibits:
+                 Exhibits:
                 <ul>
-                  
-                  {{#each exhibits}}
+                 {{#each exhibits}}
                 
                 <li>
                   Name: {{name}} <br>
@@ -47,8 +44,6 @@
                 </li>
                   {{/each}}
                 </ul>
-                
-                               
               {{/with}}
               {{/if}}
               {{#if venue}}
@@ -58,27 +53,19 @@
                  Location: {{#with location}} {{address}}, {{city}}, {{country}} <br>  {{/with}}
                 {{/with}}<br>
               {{/if}}
-              
-              
-              Guide:
+                Guide:
               {{#with guide}}<br>
                 Name: {{name}}<br>
                 Language:{{language}}<br>
                 Rating: {{rating}}<br><br>
               {{/with}}
             {{/with}}
-
-            
-            
-
           <hr/>
           </li>
         <br />
         {{/each}}
-        
-          </ul>
-          
-      {{/with}}
+           </ul>
+       {{/with}}
     {{/with}}
   </div>
 </div>
