@@ -1,0 +1,125 @@
+<div>
+
+  <div><h1>{{name}}</h1></div>
+  <br />
+  <div>birthdate: {{birthdate}}</div>
+  <br />
+  <div>birthplace: {{birthplace}}</div>
+  <br />
+  <div>deathdate: {{deathdate}}</div>
+  <br />
+  <div>deathplace: {{deathplace}}</div>
+  <br />
+  <div>nationality: {{nationality}}</div>
+  <br />
+  <div>occupation: {{occupation}}</div>
+  <br />
+  <hr />
+  <div>
+    <ul>
+      Known_for:
+      {{#each known_for}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    <ul>
+      Education:
+      {{#each education}}
+        <li>
+          {{degree}},
+          {{field}},
+          {{institution}},
+          {{year}}
+        </li>
+      {{/each}}
+    </ul>
+    <ul>
+      Notable publications:
+      {{#each notable_publications}}
+        <li>
+          {{title}},
+          {{year}},
+          {{publisher}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <ul>
+      Partners:
+      {{#each partners}}
+        <li>
+          {{name}},
+          {{relationship}},
+          {{years}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <ul>
+      Awards:
+      {{#each awards}}
+        <li>
+          {{title}},
+          {{year}},
+          {{description}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <ul>
+      Influences:
+      {{#each influences}}
+        <li>
+          {{this}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <ul>
+      Influenced:
+      {{#each influenced}}
+        <li>
+          {{this}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <ul>
+      Quotes:
+      {{#each quotes}}
+        <li>
+          {{this}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <ul>
+      Major discoveries:
+      {{#each major_discoveries}}
+        <li>
+          {{title}},
+          {{year}},
+          {{description}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <ul>
+      Contributions:
+      {{#with contributions}}
+        <li>
+          {{title}},
+          {{description}},
+          {{year}},
+          {{field}}
+        </li>
+      {{/with}}
+    </ul>
+  </div>
+
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
