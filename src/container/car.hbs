@@ -1,0 +1,133 @@
+<div>
+  <main>
+    <section>
+      {{> title data='Car' big=true}}
+      <hr>
+      <div>Make: {{make}}</div> 
+      <div>Model: {{model}}</div> 
+      <div>Year: {{year}}</div> 
+      <div>Color: {{color}}</div> <br> <hr>
+      <div>
+        {{#with features}}
+          {{> title data='Interior' big=false}}
+          {{#with interior}}
+            <b>Seats</b> <br>
+            {{#with seats}}
+              material:{{material}}<br>
+              color:{{color}}<br>
+              {{#if heated}}heated{{/if}}<br>
+              {{#if ventilated}}ventilated{{/if}}<br>
+            {{/with}}<br>
+           <b>Dashboard</b> <br>
+            {{#with dashboard}}
+              material: {{material}}<br>
+              color: {{color}}<br>
+              display: {{#with display}}
+                {{type}}, {{size}}, {{resolution}}, {{#if touchscreen}}touchscreen{{/if}}<br>
+              {{/with}}
+            {{/with}}<br>
+          <b>Audio</b> <br>
+            {{#with audio}}
+              system: {{system}}<br>
+              speakers: {{speakers}}<br>
+              {{#if subwoofer}}subwoofer {{/if}}<br>
+              {{#if bluetooth}}bluetooth {{/if}}<br>
+              {{#if USB}}USB {{/if}}<br>
+            {{/with}}
+          {{/with}}<br><hr>
+          {{> title data='Exterior' big=false}}
+          {{#with exterior}}
+            {{#with wheels}}
+              size: {{size}}<br>
+              type: {{type}}<br>
+              color: {{color}}<br><br>
+            {{/with}}
+            <b>Headlights</b><br>
+            {{#with headlights}}
+              type: {{type}}<br>
+              brightness: {{brightness}}<br>
+              {{#if automatic}}automatic{{/if}}<br>
+            {{/with}}<br>
+
+            <b>Sunroof</b><br>
+            {{#with headlights}}
+              type: {{type}}<br>
+              size: {{size}}<br>
+              {{#if automatic}}automatic{{/if}}<br>
+            {{/with}}<br>
+          {{/with}}<hr>
+          {{> title data='Safety' big=false}}
+          {{#with safety}}
+            <b>Airbags:</b> <br>
+            {{#with airbags}}
+             front: {{front}}<br> 
+             side: {{side}}<br> 
+             knee: {{knee}}<br> 
+             rear: {{rear}}<br> 
+            {{/with}}<br>
+          <b>Assistance:</b> <br>
+            {{#with assistance}}
+             {{#if blind_spot_monitoring}}blind spot monitoring{{/if}}<br>
+             {{#if rear_cross_traffic_alert}}rear cross traffic alert{{/if}}<br>
+             {{#if lane_departure_warning}}lane departure warning{{/if}}<br>
+             {{#if adaptive_cruise_control}}adaptive cruise control{{/if}}<br> 
+             {{#if collision_warning}}collision warning{{/if}}<br>
+            {{/with}}<br>
+          {{/with}}<hr>
+           {{/with}} 
+            
+            <b>Engine:</b> <br>
+            {{#with engine}}
+             type: {{type}}<br>
+             displacement: {{displacement}}<br>
+             horsepower: {{horsepower}}<br>
+             torque: {{torque}}<br>
+             transmission: {{#with transmission}} {{type}}, {{gears}} gears {{/with}}<br>
+            {{/with}}<br><br>
+
+            <b>Fuel economy:</b> <br>
+            {{#with fuel_economy}}
+            city: {{city}}<br>
+            highway: {{highway}}<br>
+            combined: {{combined}}<br><br>
+            {{/with}}<br><br>
+            <b>Price:</b> <br>
+            {{#with price}}
+            base: {{base}}<br>
+            destination: {{destination}}<br>
+            options: <br>
+           
+              {{#with options}}
+               
+               <li>navigation: {{navigation}}</li>
+               <li>moonroof: {{moonroof}}</li>
+               <li>premium_paint: {{premium_paint}}</li>
+               
+              {{/with}}
+              
+            <b>total: {{total}}</b>
+            
+          {{/with}}<br><br>
+
+
+       
+
+
+      </div>
+        
+        
+        
+        
+        
+        
+        
+        
+
+      </section>
+  </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
