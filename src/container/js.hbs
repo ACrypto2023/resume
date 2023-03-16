@@ -1,0 +1,121 @@
+<div>
+  <main>
+    <section>
+      {{> title data='JavaScript' big=true}}
+      <hr>
+      <div>Description: {{description}}</div> <br>
+      <div>History:<br> {{#with history}} year: <date>{{year}}</date> <br>founder: {{founder}}<br>{{/with}} <br></div>
+      <div>Types:
+        <ul>
+          {{#each types}}
+          <li>
+            {{this}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      <br>
+      <div>Syntax:<br>
+        
+          {{#with syntax}}
+                
+                <ul>
+                  variables: 
+                  {{#each variables}}
+                    <li>
+                      {{this}} 
+                    </li>
+                  {{/each}}
+                </ul>
+                <ul>
+                  functions: 
+                  {{#each functions}}
+                    <li>
+                      {{this}} 
+                    </li>
+                  {{/each}}
+                </ul>
+
+                <ul>
+                  conditionals: 
+                  {{#each conditionals}}
+                    <li>
+                      {{this}} 
+                    </li>
+                  {{/each}}
+                </ul>
+
+                <ul>
+                  loops: 
+                  {{#each loops}}
+                    <li>
+                      {{this}} 
+                    </li>
+                  {{/each}}
+                </ul>
+
+                <ul>
+                  classes: 
+                  {{#each classes}}
+                    <li>
+                      {{this}} 
+                    </li>
+                  {{/each}}
+                </ul>
+          {{/with}}
+      </div> <br>
+      <div> 
+        Features: 
+        <ul>
+                  
+                  {{#each features}}
+                    <li>
+                      {{this}} 
+                    </li>
+                  {{/each}}
+                </ul>
+      </div><br>
+
+      <div> 
+        Libraries: 
+        <ul>
+                  
+                  {{#each libraries}}
+                    <li>
+                      {{this}} 
+                    </li>
+                  {{/each}}
+                </ul>
+      </div><br>
+      <div> 
+        Tools: 
+        <ul>
+                  
+                  {{#each tools}}
+                    <li>
+                      {{this}} 
+                    </li>
+                  {{/each}}
+                </ul>
+      </div><br>
+
+      <div> 
+        Community: 
+        <ul>
+                  
+                  {{#each community}}
+                    <li>
+                      {{name}} ({{type}})
+                    </li>
+                  {{/each}}
+                </ul>
+      </div><br>
+
+      </section>
+  </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
