@@ -1,0 +1,76 @@
+<div>
+  <main>
+    <section>
+      {{> title data='Apple MacBook Pro' big=true}}
+      <hr>
+      <div>{{description}}</div> <br>
+      <div>price: {{price}}</div><br>
+      <div>category: {{category}}</div><br>
+      <div>
+        <b>Features:</b><br>
+        {{#with features}}
+          {{#with processor}}
+          processor: {{brand}}, {{model}}, {{speed}}, {{cores}} cores, {{cache}} cache <br>
+          {{/with}}
+          {{#with memory}}
+          memory: {{type}}, {{size}}, {{speed}} <br>
+          {{/with}}
+          {{#with storage}}
+          storage: {{type}}, {{size}} <br>
+          {{/with}}
+          {{#with display}}
+          display: {{size}}, {{resolution}}, {{technology}}, {{color_space}}, {{brightness}}, {{refresh_rate}}<br>
+          {{/with}}
+          {{#with graphics}}
+          graphics: {{brand}}, {{model}}, {{memory}} <br>
+          {{/with}}
+          
+          ports:
+          <ul>
+          {{#each ports}}
+          <li>
+            type: {{type}}<br>
+            count: {{count}}<br>
+              <ul>
+                {{#each features}}
+                  <li>
+                  {{this}}<br>
+                  </li>
+                {{/each}}
+              </ul>
+
+          </li>
+          {{/each}}
+          </ul>
+          {{#with battery}}
+          battery: {{type}}, {{capacity}}, {{life}}<br>
+          {{/with}}
+          weight: {{weight}}<br>
+          {{#with dimensions}}
+          dimensions: height: {{height}}, width: {{width}}, depth: {{depth}}<br>
+          {{/with}}
+          operating system: {{operating_system}}<br>
+          accessories: 
+          <ul>
+            {{#each accessories}}
+              <li>
+                name: {{name}}<br>
+                price: {{price}}<br><br>
+              </li>
+            {{/each}}
+          </ul>
+
+
+        {{/with}}
+
+      </div>
+
+
+      </section>
+  </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
