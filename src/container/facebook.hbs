@@ -1,0 +1,113 @@
+<div>
+  <main>
+    <section>
+      <h1> {{name}}</h1>
+      <hr />
+      <div>
+        Users:
+        <ul>
+          {{#each users}}
+            <li>
+              id:
+              {{id}}<br />
+              name:
+              {{name}}<br />
+              gender:
+              {{gender}}<br />
+              age:
+              {{age}}<br />
+              friends:
+              <ul>
+                {{#each friends}}
+                  <li>
+                    id:
+                    {{id}}<br />
+                    name:
+                    {{name}}<br />
+                    gender:
+                    {{gender}}<br />
+                    age:
+                    {{age}}<br />
+                    mutual friends:
+                    <ul>
+                      {{#each mutual_friends}}
+                        <li>
+                          id:
+                          {{id}}<br />
+                          name:
+                          {{name}}<br />
+                          gender:
+                          {{gender}}<br />
+                          age:
+                          {{age}}<br />
+                          {{#if mutual_friends}}
+                            mutual_friends:
+                            <ul>
+                              {{#each mutual_friends}}
+                                <li>
+                                  id:
+                                  {{id}}<br />
+                                  name:
+                                  {{name}}<br />
+                                  gender:
+                                  {{gender}}<br />
+                                  age:
+                                  {{age}}<br />
+                                </li>
+                              {{/each}}
+                            </ul>
+                          {{/if}}
+
+                        </li>
+                      {{/each}}
+                    </ul>
+
+                  </li>
+                {{/each}}
+              </ul>
+
+              {{#if groups}}
+                groups:
+                <ul>
+                  {{#each groups}}
+                    <li>
+                      id:
+                      {{id}}<br />
+                      name:
+                      {{name}}<br />
+                      description:
+                      {{description}}<br />
+                      <ul>
+                        {{#each members}}
+                          <li>
+                            id:
+                            {{id}}<br />
+                            name:
+                            {{name}}<br />
+                            gender:
+                            {{gender}}<br />
+                            age:
+                            {{age}}<br />
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </li>
+                  {{/each}}
+                </ul>
+              {{/if}}
+
+              <hr />
+            </li>
+          {{/each}}<br />
+        </ul>
+
+      </div>
+
+    </section>
+  </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
