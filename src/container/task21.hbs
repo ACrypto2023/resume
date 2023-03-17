@@ -1,0 +1,121 @@
+<main>
+  <div class='card'>
+    <div class='card-body'>
+      <div class='card'>
+        <div class='card-body'>
+          <h1>{{heading.main.title}}</h1>
+          <h6 class='text-muted'>{{heading.main.text}}</h6>
+          <button
+            type='button'
+            class='btn btn-primary'
+          >{{heading.main.button_text.solid}}</button>
+          <br /><br />
+          <button
+            type='button'
+            class='btn btn-outline-primary'
+          >{{heading.main.button_text.outline}}</button>
+        </div>
+      </div>
+      <br />
+      <div class='card'>
+        <div class='card-body'>
+          <h2>{{heading.second.title}}</h2>
+          <h6
+            class='text-muted'
+          >{{heading.second.text}}</h6>
+          <button
+            type='button'
+            class='btn btn-secondary'
+          >{{heading.second.button_text.solid}}</button>
+          <br /><br />
+          <button
+            type='button'
+            class='btn btn-outline-secondary'
+          >{{heading.second.button_text.outline}}</button>
+        </div>
+      </div>
+      <div class='card'>
+        <div class='card-body'>
+          <h3>{{heading.subblock.title}}</h3>
+          <h6
+            class='text-muted'
+          >{{heading.subblock.text}}</h6>
+          <button
+            type='button'
+            class='btn btn-dark'
+          >{{heading.subblock.button_text.solid}}</button>
+          <br /><br />
+          <button
+            type='button'
+            class='btn btn-outline-dark'
+          >{{heading.subblock.button_text.outline}}</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br />
+  <div class='card'>
+    <div class='card-body'>
+      <div class='display-1'><b
+        >{{nested_display.title}}</b></div><br />
+      <div class='card'>
+        <div class='card-body'>
+          <div class='display-4'><b
+            >{{nested_display.children_display.title}}</b></div>
+
+          <h6
+            class='text-muted'
+          >{{nested_display.children_display.text}}</h6>
+          <button
+            type='button'
+            class='btn btn-outline-warning'
+          >{{nested_display.children_display.button.text}}</button>
+        </div>
+      </div>
+      <br />
+      <h6>{{nested_display.header_text}}</h6>
+      <button
+        type='button'
+        class='btn btn-info'
+      >{{nested_display.button.text}}</button>
+
+    </div>
+    <br />
+  </div>
+  <div class='card'>
+    <div class='card-body'>
+      <div
+        class='text-uppercase text-muted'
+      >{{paragraph.title}}</div>
+      <br />
+      <div
+        class='text-lowercase text-muted'
+      >{{paragraph.text}}</div>
+      <br />
+      <div class='btn text-primary'><a
+          htef='https://google.com'
+        >{{paragraph.button.text}}</a></div>
+      <div class='card'>
+        <div class='card-body'>
+          <ul>
+            {{#each paragraph.list_name}}
+              <li>
+                <div class='text-primary'>
+                  <a
+                    href='{{url}}'
+                    target='_blank'
+                  >{{text}}</a>
+
+                </div>
+              </li>
+              <br />
+            {{/each}}
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
