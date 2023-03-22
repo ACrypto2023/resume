@@ -1,96 +1,67 @@
 <main>
-  <div class='card py-3 ps-3 pe-3'>
-    {{#with navigation}}
-    <div class='nav'>
-      
-        
-        <div class="col-5">
-          <div class="nav-item">
-          <h2>{{Logo}} </h2>
-          </div>
+  
+  {{>shopheader}}
 
-        </div>
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+     {{#each breadcrumb}}
+        {{#if @last}}
+          <li class="breadcrumb-item active" aria-current="page">{{name}}</li>
+        {{else}}
+          <li class="breadcrumb-item"><a href={{url}}>{{name}}</a></li>
+        {{/if}}
+     {{/each}}
+  </ol>
+</nav>
+<br>
+<br>
+<div class='row gx-2'>
+  {{#with productData}}
+    
+      <div class='col-6'>
+        <img src={{img}}  style="width:100%">
+        <br>
+        <div class="card mt-2 ">
+                        <div class="card-body">
+                        <h5 class="card-title">{{info.title}}</h5>
+                              
+                        
+                        <p class="card-text">{{info.about}}</p>
+                        <h4>Price: {{info.price}}</h4>
+                        <div>
+                          {{#each info.category}}
+                            {{#if isHot}}
+                              <span
+                                class='bage text-bg-warning ms-1 rounded-pill'>&nbsp&nbsp{{name}}&nbsp&nbsp
+                              </span>
+                            {{/if}}
+                            {{#if isNew}}
+                              <span
+                                class='bage text-bg-primary ms-1 rounded-pill'>&nbsp&nbsp{{name}}&nbsp&nbsp
+                              </span>
+                            {{/if}}
+                            {{#if isBonus}}
+                              <span
+                                class='bage text-bg-info ms-1 rounded-pill'>&nbsp&nbsp{{name}}&nbsp&nbsp
+                              </span>
+                            {{/if}}
 
+                             
 
-        <div class="col-7">
-          <div class="nav">
-          {{#each links}}
-            <div class='nav-item'>
-              <a href={{href}} class='nav-link text-end'>{{text}}</a>
-            </div>
-          {{/each}}
-          </div>
+                          {{/each}}
+                              
+                              
+                              
+                              
+                              
+                              {{#if idNew}}
+                              <span
+                                      class='bage text-bg-primary ms-1 rounded-pill'><small>Нове</small></span>
+                              {{/if}}
+                               </span>
 
-        </div>
-      
-      
-      
-      
-    </div>
-    {{/with}}
-
-  </div>
-  <br />
-  <h2 class='text-center'>{{newsBlock.title}}</h2>
-  <br />
-  <div class='row gx-2 gy-2'>
-    {{#each newsBlock.cards}}
-      <div class='col-3'>
-        <div class='card text-bg-dark mb-2'>
-          <div class='card-header text-bg-dark ps-3'>
-            <h6>{{title}}
-              {{#if isTop}}
-                <span
-                  class='bage text-bg-success rounded-pill'
-                ><small>Top</small></span>
-              {{/if}}
-              {{#if idNew}}
-                <span
-                  class='bage text-bg-danger rounded-pill'
-                >New</small></span>
-              {{/if}}
-
-            </h6>
-          </div>
-
-          <div
-            class='card-body text-bg-dark ps-3'
-          >{{description}}
-          </div>
-        </div>
-      </div>
-    {{/each}}
-  </div><br />
-  <br />
-  <hr />
-  <br />
-  <ul class='nav nav-tabs'>
-    {{#each goodsBlock.tabs}}
-
-      <li class='nav-item'>
-        <a
-          {{#if isActive}}
-          class='nav-link active'
-          {{else}}
-          class='nav-link'
-          {{/if}}
-          aria-current='page'
-          href='#'
-        >{{text}}</a>
-
-      </li>
-
-
-      
-    {{/each}}
-    <div class="row gy-4 gx-2">
-            {{#each goodsBlock.cards}}
-            <div class="col-4">
-                  <div class="card mt-2 ">
-                      <img src={{image}} class="card-img-top" alt={{title}}>
-                      <div class="card-body">
-                        <h5 class="card-title">{{title}}
-                              {{#if isHot}}
+                        </div>
+                        {{!-- {{#if isHot}}
                                 <span
                                       class='bage text-bg-warning ms-1 rounded-pill'><small>Hot!</small>
                                     </span>
@@ -98,81 +69,109 @@
                               {{#if idNew}}
                                  <span
                                       class='bage text-bg-primary ms-1 rounded-pill'><small>Нове</small></span>
-                              {{/if}}
-                        </h5>
-                        <p class="card-text">{{description}}</p>
+                              {{/if}} --}}
                         
                       </div>
                   </div>
-            </div>
-            {{/each}}
       </div>
-  </ul>
-  <br>
-
-  <br>
-  <div class='card py-2 ps-2 pe-1 text-bg-dark'>
-    {{#with subscribe}}
-    <div class='nav'>
+      <div class='col-1'></div>
       
+      <div class='col-5'>
+        <table class="table">
+          <thead>
+            <tr>
+              {{#each item.head}}
+              <th>
+                <b>{{this}}</b>
+              </th>
+              {{/each}}
+              </tr>
+          </thead>
+          <tbody>
+              {{#each item.body}}
+                <tr>
+                  {{#each this}}
+                    <th>
+                      {{this}}
+                    </th>
+                  {{/each}}
+                <th>
+              {{/each}}
+          </tbody>
+        </table>
+        <div class="card">
+           <div class="card-header">
+              {{param.title}}
+           </div>
+          <ul class="list-group list-group-flush">
+            {{#each param.list}}
+            <li class="list-group-item">{{this}}</li>
+            {{/each}}
+
+          </ul>
+        </div> <br>
+        {{#if alert.isError}}
+        <div class="alert alert-danger" role="alert">
+           {{alert.text}}
+        </div>
+        {{/if}}
+
+      </div>
+      
+      
+
+
+
+
+  {{/with}}
+
+</div>
+
+
+      <div class="card mt-2 ">
+          <div class="card-body">
+            {{#each productData.actionList}}
+              {{#if isWarning}}
+                <button type="button" class="btn btn-warning mx-2">{{name}}</button>
+              {{/if}}
+              {{#if isError}}
+                <button type="button" class="btn btn-outline-danger mx-2">{{name}}</button>
+              {{/if}}
+              {{#if isSuccess}}
+                <button type="button" class="btn btn-success mx-2">{{name}}</button>
+              {{/if}}
+              {{#if isGood}}
+                <button type="button" class="btn btn-outline-success mx-2">{{name}}</button>
+              {{/if}}
+            {{/each}}
+          </div>
+      </div>
+  
+<br><br><br><br><hr><br>
+<h2 class="text-center">{{goodsOtherBlock.title}}</h2>
+
+
+
+ <div class="row">
+      {{#each goodsOtherBlock.cards}}
+       
+        {{>shopcard}}
         
-        <div class="col-6">
-          <div class="nav-item">
-          <h2>{{header}}</h2>
-          </div>
-          <div>
-            <h6>{{description}}</h6>
-          </div>
+          
+      {{/each}}
+</div> 
 
-        </div>
-
-
-        <div class="col-6">
-          <div class="nav">
-          {{#each buttons}}
-            <div class='nav-item mx-2 my-5'>
-               <a type='button'  class='btn btn-primary ' href={{link}} target="_blank">{{text}}</a>
-            </div>
-          {{/each}}
-          </div>
-
-        </div>
-      
-      
-      
-      
-    </div>
-    {{/with}}
-
-  </div>
+   <br>
+  <hr>
+  <br> <br>
+  {{>shopaction}}
+  <br>
   <br>
   <hr>
-  <br>
-  <div class='card py-2 ps-2 pe-1 text-center text-bg-success'>
-    {{#with service}}
-   
-          <h2>{{title}}</h2>
-          
-          
-            <h6>{{description}}</h6>
-          
-          
-          {{#each buttons}}
-            <div class='nav-item mx-2 my-2'>
-               <a type='button'  class='btn btn-primary ' href={{link}} target="_blank">{{text}}</a>
-            </div>
-          {{/each}}
-         
+  
+  {{>shopfooter}}
 
-        </div>
-      
-      
-      
-      
-    
-    {{/with}}
-
-  </div>
+  
 
 
 

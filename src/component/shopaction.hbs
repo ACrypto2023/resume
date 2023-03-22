@@ -1,0 +1,14 @@
+
+  <div class='card py-2 ps-2 pe-1 text-center text-bg-success'>
+    {{#with service}}
+        <h2>{{title}}</h2>
+        <h6>{{description}}</h6>
+          {{#each buttons}}
+            <div class='nav-item mx-2 my-2'>
+               <a type='button'  class='btn btn-primary ' href={{link}} target="_blank">{{text}}</a>
+            </div>
+          {{/each}}
+          </div>
+    {{/with}}
+  </div>
+
