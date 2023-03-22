@@ -1,0 +1,72 @@
+<footer>
+  <div class='row'>
+    {{#each footer}}
+
+      <div class='col-2'>
+        {{#each this}}
+          <div class='nav'>
+
+            <div class='nav-item'>
+              {{#if @last}}
+                <a
+                  href={{link}}
+                  class='nav-link disabled'
+                >{{text}}</a>
+              {{else}}
+                <a
+                  href={{link}}
+                  class='nav-link'
+                >{{text}}</a>
+              {{/if}}
+
+            </div>
+
+          </div>
+        {{/each}}
+      </div>
+
+    {{/each}}
+  </div>
+
+  {{!-- <div class='col-2'>
+        <div class='card card border-0'>
+          {{#each this}}
+
+            <a
+              class='btn btn-outline-primary'
+              href={{href}}
+              target='_blank'
+            >{{text}}</a><br />
+
+          {{/each}}
+        </div>
+      </div> --}}
+
+  {{!-- <div class='col-2'>
+        <div class='card card border-0'>
+          {{#each footer.socialMedia}}
+
+            <a
+              class='btn btn-outline-dark'
+              href={{link}}
+              target='_blank'
+            >{{name}}</a><br />
+
+          {{/each}}
+        </div>
+      </div>
+      <div class='col-2'>
+        <div class='card card border-0'>
+          {{#each footer.partners}}
+
+            <a
+              class='btn btn-outline-info'
+              href={{link}}
+              target='_blank'
+            >{{name}}</a><br />
+
+          {{/each}}
+        </div>
+      </div> --}}
+
+</footer>

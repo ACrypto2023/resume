@@ -1,0 +1,42 @@
+<header>
+  <div class='card py-3 ps-3 pe-3'>
+    {{#with navigation}}
+      <div class='nav'>
+
+        <div class='col-6'>
+          <div class='nav-item'>
+            <h2>{{Logo}} </h2>
+          </div>
+
+        </div>
+
+        <div class='col-6'>
+          <div class='nav'>
+            {{#each links}}
+              {{#if @last}}
+                <div class='nav-item'>
+                  <a
+                    href={{href}}
+                    class='nav-link disabled'
+                  >{{text}}</a>
+
+                </div>
+              {{else}}
+                <div class='nav-item'>
+                  <a
+                    href={{href}}
+                    class='nav-link'
+                  >{{text}}</a>
+
+                </div>
+              {{/if}}
+            {{/each}}
+          </div>
+
+        </div>
+
+      </div>
+    {{/with}}
+
+  </div>
+</header>

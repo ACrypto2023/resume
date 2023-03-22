@@ -1,0 +1,22 @@
+<div class='col-4'>
+  <div class='card'>
+    <img src={{image}} class='card-img-top' alt={{title}} />
+    <div class='card-body'>
+      <h5 class='card-title'>{{title}}
+        {{#if isHot}}
+          <span
+            class='bage text-bg-warning ms-1 rounded-pill'
+          >Hot
+          </span>
+        {{/if}}
+        {{#if idNew}}
+          <span
+            class='bage text-bg-info ms-1 rounded-pill'
+          >Нове
+          </span>
+        {{/if}}
+      </h5>
+      <p class='card-text'>{{description}}</p>
+    </div>
+  </div><br />
+</div>
