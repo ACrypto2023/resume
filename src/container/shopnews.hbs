@@ -1,0 +1,47 @@
+<main>
+  
+  {{>shopheader}}
+
+  {{>breadcrumb}}
+<br>
+<br>
+<img src={{newsData.photo}}  style="width:100%">
+<br><br>
+<h1>{{newsData.head.heading}}</h1>
+
+<p>{{newsData.head.description}}</p>
+<br>
+{{#each newsData.body}}
+<h2>{{title}}</h2>
+<p>{{text}}</p>
+{{/each}}
+<br>
+<hr>
+<br>
+<h3 class="text-center">{{newsOtherBlock.title}}</h3>
+<br>
+
+<div class='row gx-2 gy-2'>
+      {{#each newsOtherBlock.cards}}
+        <div class='col-3'>
+          {{>shoppost}}
+        </div>
+      {{/each}}
+  </div>
+
+
+
+
+
+   <br>
+  <hr>
+  <br> <br>
+  {{>shopaction}}
+  <br>
+  <br>
+  <hr>
+  
+  {{>shopfooter}}
+
+  
+</main>

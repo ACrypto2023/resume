@@ -1,0 +1,22 @@
+<div class='card text-bg-dark mb-2'>
+            <div class='card-header text-bg-dark ps-3'>
+              <h6>{{title}}
+                {{#if isTop}}
+                  <span
+                    class='bage text-bg-success rounded-pill'
+                  ><small>&nbsp Top &nbsp</small></span>
+                {{/if}}
+                {{#if idNew}}
+                  <span
+                    class='bage text-bg-danger rounded-pill'
+                  >&nbsp New &nbsp</small></span>
+                {{/if}}
+
+              </h6>
+            </div>
+
+            <div
+              class='card-body text-bg-dark ps-3'
+            >{{description}}
+            </div>
+</div>
