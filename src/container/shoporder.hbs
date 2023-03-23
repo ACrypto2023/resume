@@ -1,0 +1,613 @@
+<main>
+  
+  {{>shopheader}}
+
+  <h2 >{{header}}</h2>
+<br>
+<br>
+
+
+<div class="row">
+    
+      <div class="col-8">
+       {{#with contacts_data}}
+          <h4 class=" mb-3">{{title}}</h4>
+          {{#each buttons}}
+
+              {{#if isPrimary}}
+              <button type="button" class="btn btn-warning">{{text}}</button>
+              {{/if}}
+              {{#if isOutline}}
+              <button type="button" class="btn btn-outline-warning">{{text}}</button>
+              {{/if}}
+          {{/each}}
+      
+      
+    
+      
+              <div class="row">
+                  {{#with form}}
+                    {{#each input}}
+                      <div class="col-5">
+                              <div class='my-2 mt-4'>
+                              <label class='form-label' >{{this.lable}}</label>
+                              <input  class='form-control' placeholder={{this.placeholder}}>
+                              <div class='form-text text-danger'>{{this.caption}}</div>
+                            </div>
+                          
+                      </div>
+                      
+                    {{/each}}
+                    <br><hr><br>
+                    {{#each switch}}
+                      <div class='form-check form-switch'>
+                        <label class="form-check-label" >{{text}}</label>
+                        <input  type="checkbox" class="form-check-input " {{#if isActive}}checked{{/if}}>
+                      </div>
+                    {{/each}}
+                  {{/with}}
+                <br><br><hr><br>
+
+
+              </div>
+       {{/with}}
+        {{#with delivery}} 
+          <h4>{{title}}</h4>
+            <div class="card" >
+              
+                  <div class="row">
+                  {{#each select}}
+                      <div class="col-5">
+                          <label class='form-label ms-4 mt-2'>{{label}}</label>
+                          <select class='form-select ms-4 mb-2'>
+                            <option selected>{{placeholder}}</option>
+                            {{#each options}}
+                              <option value={{value}}>{{text}}</option>
+                            {{/each}}
+                        
+                          </select>
+                      </div>
+                    {{/each}}
+                   </div>
+               
+            </div>
+            <div class="m-2">
+                <div class="row">
+                  
+                 {{#each delivery_type}} 
+                  <div class="col-6">
+                      <div class='form-check'>
+                          <input name="1" type='radio' class='form-check-input' />
+                          <label class='form-check-label'>{{type}}</label>
+                      </div>
+                  </div>
+                  <div class="col-6">
+                           <label class='form-check-label text-end'>{{value}}</label>
+                  </div>
+                  {{/each}}
+
+
+                </div>
+                
+            </div>
+        <hr>
+        <h4>Оплата</h4>
+        
+        {{#each payment}}
+          <div class='form-check'>
+              <input name="2" type='radio' class='form-check-input' />
+              <label class='form-check-label'>{{type}}</label><br>
+              <div class="text-muted text-sm">{{#if description}}<small>{{description}}</small> {{/if}}</div>
+
+          </div>
+        {{/each}}
+        <hr>
+        <h4>Контактні дані отримувача</h4>
+        <div class="row">
+                  {{#each contact}}
+                      <div class="col-5 m-2">
+                          <label class='form-label' >{{this.lable}}</label>
+                          <input  class='form-control' placeholder={{this.placeholder}}>
+                          <div class='form-text text-muted'>{{this.caption}}</div>
+                        
+                          </select>
+                      </div>
+                    {{/each}}
+                         <div>
+                          <label class='form-label' >{{coment.lable}}</label>
+                          <input  class='form-control' placeholder={{coment.placeholder}}>
+                        </div>
+          </div>
+
+        {{/with}}
+        
+            {{#with coupon}}
+              {{#with select}}
+                <h4 class="mt-3">Купони</h4>
+                <label class='form-label ms-4 mt-2'>{{available_coupon.lable}}</label>
+                <select class='form-select ms-4 mb-2'>
+                  <option selected>{{available_coupon.placeholder}}</option>
+                        {{#each available_coupon.options}}
+                          <option value={{value}}>{{text}}</option>
+                        {{/each}}
+                            
+                </select>  
+                <label class='form-label ms-4 mt-2'>{{friend_coupon.lable}}</label>
+                <select class='form-select ms-4 mb-2'>
+                  <option selected>{{friend_coupon.placeholder}}</option>
+                        {{#each friend_coupon.options}}
+                          <option value={{value}}>{{text}}</option>
+                        {{/each}}
+                            
+                </select> 
+              {{/with}}
+              {{#each add}}
+                  <label class='form-label' >{{this.lable}}</label>
+                  <input  class='form-control' placeholder={{this.placeholder}}>
+                  <div class='form-text text-muted'>{{this.caption}}</div>
+              {{/each}}
+
+
+            {{/with}}            
+
+              
+           
+         <hr>   
+        {{#with quiz}}
+        <h4>{{title}}</h4>
+        <div class="mt-2">{{preference.title}}</div>
+            {{#each preference.options}}
+              
+              <div class='form-check my-2'>
+                <input type='checkbox' class='form-check-input' />
+                <label class='form-check-label'>{{this}}</label>
+              </div>
+            {{/each}}
+        
+        {{/with}}
+
+
+
+
+      </div>
+    
+      <div class="col-4">
+         
+            <div class="card m-2">
+              <div class="card-body">
+                {{#each action_block}}
+                  
+                  {{#if isPrimary}}
+                    <button type="button" class="btn btn-success btn-sm mb-2">{{text}}</button>
+                  {{/if}}
+                  {{#if isDanger}}
+                    <button type="button" class="btn btn-danger btn-sm mb-2">{{text}}</button>
+                  {{/if}}
+                  {{#if isInfo}}
+                    <button type="button" class="btn btn-info btn-sm">{{text}}</button>
+                  {{/if}}
+              
+              {{/each}}
+              </div>
+            </div>  
+            <div class="card m-2">
+              <div class="card-body">
+                {{#with total}}
+                <h4>{{title}}</h4>
+                  {{#each item_list}}
+                  <div>{{name}}: {{price}}</div>
+                  {{/each}}
+                  <hr>
+                  {{#each additional_info}}
+                      <div> {{text}}: {{value}}</div>
+                  {{/each}}
+                  <hr>
+
+                  <div> {{total_price.text}}: {{total_price.value}}</div>
+                 <hr>
+                    {{#each button}}
+                      {{#if isPrimary}}
+                      <button type="button" class="btn btn-primary btn-sm my-2">{{text}}</button>
+                      {{/if}}
+                      {{#if isOutline}}
+                      <button type="button" class="btn btn-outline-primary btn-sm my-2">{{text}}</button>
+                      {{/if}}
+                    {{/each}}
+              
+              {{/with}}
+              </div>
+            </div>  
+          
+        
+      
+      
+      </div>
+
+      <div class="mt-4"><hr></div>
+      {{>shopfooter}}
+
+      
+      
+     
+      
+
+ 
+       
+  
+     
+
+  
+</div>
+
+
+
+
+
+
+
+
+<br>
+<div class='row gx-2'>
+  {{#with productData}}
+    
+      <div class='col-6'>
+        <img src={{img}}  style="width:100%">
+        <br>
+        <div class="card mt-2 ">
+                        <div class="card-body">
+                        <h5 class="card-title">{{info.title}}</h5>
+                              
+                        
+                        <p class="card-text">{{info.about}}</p>
+                        <h4>Price: {{info.price}}</h4>
+                        <div>
+                          {{#each info.category}}
+                            {{#if isHot}}
+                              <span
+                                class='bage text-bg-warning ms-1 rounded-pill'>&nbsp&nbsp{{name}}&nbsp&nbsp
+                              </span>
+                            {{/if}}
+                            {{#if isNew}}
+                              <span
+                                class='bage text-bg-primary ms-1 rounded-pill'>&nbsp&nbsp{{name}}&nbsp&nbsp
+                              </span>
+                            {{/if}}
+                            {{#if isBonus}}
+                              <span
+                                class='bage text-bg-info ms-1 rounded-pill'>&nbsp&nbsp{{name}}&nbsp&nbsp
+                              </span>
+                            {{/if}}
+
+                             
+
+                          {{/each}}
+                              
+                              
+                              
+                              
+                              
+                              {{#if idNew}}
+                              <span
+                                      class='bage text-bg-primary ms-1 rounded-pill'><small>Нове</small></span>
+                              {{/if}}
+                               </span>
+
+                        </div>
+                        {{!-- {{#if isHot}}
+                                <span
+                                      class='bage text-bg-warning ms-1 rounded-pill'><small>Hot!</small>
+                                    </span>
+                              {{/if}}
+                              {{#if idNew}}
+                                 <span
+                                      class='bage text-bg-primary ms-1 rounded-pill'><small>Нове</small></span>
+                              {{/if}} --}}
+                        
+                      </div>
+                  </div>
+      </div>
+      <div class='col-1'></div>
+      
+      <div class='col-5'>
+        <table class="table">
+          <thead>
+            <tr>
+              {{#each item.head}}
+              <th>
+                <b>{{this}}</b>
+              </th>
+              {{/each}}
+              </tr>
+          </thead>
+          <tbody>
+              {{#each item.body}}
+                <tr>
+                  {{#each this}}
+                    <th>
+                      {{this}}
+                    </th>
+                  {{/each}}
+                <th>
+              {{/each}}
+          </tbody>
+        </table>
+        <div class="card">
+           <div class="card-header">
+              {{param.title}}
+           </div>
+          <ul class="list-group list-group-flush">
+            {{#each param.list}}
+            <li class="list-group-item">{{this}}</li>
+            {{/each}}
+
+          </ul>
+        </div> <br>
+        {{#if alert.isError}}
+        <div class="alert alert-danger" role="alert">
+           {{alert.text}}
+        </div>
+        {{/if}}
+
+      </div>
+      
+      
+
+
+
+
+  {{/with}}
+
+</div>
+
+
+      <div class="card mt-2 ">
+          <div class="card-body">
+            {{#each productData.actionList}}
+              {{#if isWarning}}
+                <button type="button" class="btn btn-warning mx-2">{{name}}</button>
+              {{/if}}
+              {{#if isError}}
+                <button type="button" class="btn btn-outline-danger mx-2">{{name}}</button>
+              {{/if}}
+              {{#if isSuccess}}
+                <button type="button" class="btn btn-success mx-2">{{name}}</button>
+              {{/if}}
+              {{#if isGood}}
+                <button type="button" class="btn btn-outline-success mx-2">{{name}}</button>
+              {{/if}}
+            {{/each}}
+          </div>
+      </div>
+  
+<br><br><br><br><hr><br>
+<h2 class="text-center">{{goodsOtherBlock.title}}</h2>
+
+
+
+ <div class="row">
+      {{#each goodsOtherBlock.cards}}
+       
+        {{>shopcard}}
+        
+          
+      {{/each}}
+</div> 
+
+   <br>
+  <hr>
+  <br> <br>
+  {{>shopaction}}
+  <br>
+  <br>
+  <hr>
+  
+  {{>shopfooter}}
+
+  
+
+
+
+  
+  {{!-- {{#with navigation }}
+ {{#each links}}
+ <a href="{{href}}" class='btn text-primary'>{{text}}</a>
+ {{/each}}
+  
+   <a type='button'  class='btn btn-primary' href="{{button.href}}" target="_blank">{{button.text}}</a>
+   {{/with}}
+   <br>
+   <hr>
+   <br>
+   <h1>{{header.title}}</h1>
+   <br>
+   <h6 class='text-muted'>{{header.description}}</h6><br>
+   <a type='button' class='btn btn-primary' href="{{header.button.link}}" target="_blank">{{header.button.text}}</a>
+   <br><br>
+   <hr>
+   <br>
+              
+   {{#with city}}
+   <h2>{{title}}</h2>
+   <br>
+      <div class="row">
+      {{#each cards}}
+        
+            <div class="col-6">
+              <div class="card">
+                  <img src="{{picture.src}}" class="card-img-top" alt="{{picture.alt}}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <a href={{button.href}} class="btn btn-primary">{{button.text}}</a><br>
+                  </div>
+               </div><br> 
+            </div>
+        
+      {{/each}}
+      </div> 
+{{/with}}
+
+<br> <hr>
+<br>
+   <h2>{{winner.title}}</h2>
+   <br>
+    <table class="table">
+    <thead>
+      <tr>
+        {{#each winner.table.head}}
+        <th>
+          {{this}}
+        </th>
+        {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each winner.table.user}}
+      <tr>
+        <th>
+          {{place}}
+        </th>
+        <th>
+          {{name}}
+        </th>
+        <th>
+          {{surname}}
+        </th>
+        <th>
+          {{nickname}}
+        </th>
+        
+      </tr>
+      {{/each}}
+      
+      
+
+    </tbody>
+   </table>
+   <br>
+   <hr>
+   <br>
+   <h2>{{gallery.title}}</h2>
+   <br>
+   <div class="row">
+         {{#each gallery.cards}}
+          <div class="col-4">
+                <div class='card'>
+                        
+                                <ul class="card-title list-group text-bg-light">{{name}}
+                                                {{#each items}}
+                                                <li class="list-group-item">{{this}}</li>
+                                                {{/each}}
+                                       
+                                </ul>
+                       
+                </div>
+            </div>
+          {{/each}}
+     </div>
+    <br>
+<div class='display-3 '><b>{{relaxion.title}}</b></div><br>
+<div class="row">
+   {{#each relaxion.cards}}
+    <div class="col-5 ">
+      <div class='card text-bg-secondary' >
+          <ul class=" list-group text-bg-secondary">
+                  <li class=" card-title list-group-item text-bg-secondary">{{header}}</li>
+                  <li class="list-group-item text-bg-secondary">
+                    <h5>{{title}}</h5>
+                    <br>
+                    {{description}}
+                  </li>
+                  
+                                
+           </ul>
+      </div><br>
+      </div>
+    {{/each}}
+
+    </div>
+
+</div>
+<br><hr><br>
+<div class="row">
+      {{#each rest.cards}}
+        
+          <div class="col-6">
+            
+
+                <div class="card text-center ">
+                  <div class="card-header text-bg-light text-muted">
+                   <h6> {{header }}</h6>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title text-muted">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <a href="#" class="btn btn-primary">{{button}}</a>
+                  </div>
+                  <div class="card-footer text-muted">
+                   <h6> {{footer}}</h6>
+                  </div>
+                </div>
+
+          </div>
+        
+      {{/each}}
+      </div>  
+    
+
+<div class='display-3 '><b>{{proposition.title}}</b></div><br>
+<div class="row">
+   {{#each proposition.card}}
+    <div class="col-5 ">
+      <div class='card text-bg-warning' >
+          <ul class=" list-group ">
+                  <li class=" card-title list-group-item text-bg-warning">{{header}}</li>
+                  <li class="list-group-item text-bg-warning">
+                    <h5>{{title}}</h5>
+                    <br>
+                    {{description}}
+                            
+           </ul>
+      </div><br>
+      </div>
+    {{/each}}
+
+    </div>
+
+</div>
+<br><hr><br>
+ <h5 class='text-muted'>{{footer.title}}</h5><br>
+  <div class="row">
+    <div class="col-4 ">
+            <div class="card card border-0">
+            {{#each footer.navigation}}
+              
+              <a  class='btn btn-outline-primary' href={{href}} target="_blank">{{text}}</a><br>
+              
+              
+              {{/each}}
+              </div>
+      </div>
+      <div class="col-4 ">
+            <div class="card card border-0">
+            {{#each footer.socialMedia}}
+              
+              <a  class='btn btn-outline-dark' href={{link}} target="_blank">{{name}}</a><br>
+              
+              
+              {{/each}}
+              </div>
+      </div>
+      <div class="col-4 ">
+            <div class="card card border-0">
+            {{#each footer.partners}}
+              
+              <a  class='btn btn-outline-info' href={{link}} target="_blank">{{name}}</a><br>
+              
+              
+              {{/each}}
+              </div>
+      </div>
+  </div> --}}
+
+</main>
