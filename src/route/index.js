@@ -2253,17 +2253,28 @@ router.get('/shopnews', function (req, res) {
 })
 
 // ================================================================
+<<<<<<< HEAD
 
+=======
+>>>>>>> a862836392148a19c582a02d95e6cf3046be3f85
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
+<<<<<<< HEAD
 router.get('/shopcart', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
+=======
+router.get('/shoporder', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shoporder', {
+>>>>>>> a862836392148a19c582a02d95e6cf3046be3f85
     layout: 'shop',
     navigation: {
       links: [
@@ -2279,10 +2290,18 @@ router.get('/shopcart', function (req, res) {
           text: 'Help',
           href: 'https://www.youtube.com/',
         },
+<<<<<<< HEAD
+=======
+        {
+          text: 'Exit',
+          href: null,
+        },
+>>>>>>> a862836392148a19c582a02d95e6cf3046be3f85
       ],
       Logo: 'Logo',
     },
 
+<<<<<<< HEAD
     header: {
       title: 'Кошик',
       button: {
@@ -2358,10 +2377,90 @@ router.get('/shopcart', function (req, res) {
         {
           text: 'Офрмити кредит',
           link: 'https://www.youtube.com/',
+=======
+    header: 'Оформлення замовлення',
+    contacts_data: {
+      title: 'Контактні дані',
+
+      buttons: [
+        {
+          text: 'Я новий покупець',
+          isPrimary: true,
+        },
+        {
+          text: 'Я постійний покупець',
+          isOutline: true,
+        },
+      ],
+      form: {
+        input: {
+          surname: {
+            lable: 'Прізвище',
+            placeholder: 'Іванов',
+            caption: 'Введіть прізвище',
+          },
+          name: {
+            lable: 'Ім’я',
+            placeholder: 'Іван',
+            caption: 'Введіть Ім’я',
+          },
+          phone: {
+            lable: 'Мобільний телефон',
+            placeholder: '+38 (XXX) XXX XX XX',
+            caption: 'Введіть телефон',
+          },
+          email: {
+            lable: 'Пошта',
+            placeholder: 'ivanivanov@ukr.net',
+            caption: 'Введіть Пошту',
+          },
+        },
+        switch: [
+          {
+            text: 'Отримувати інформацію про новинки',
+            isActive: false,
+          },
+          {
+            text: 'Отримувати інформацію про знижки',
+            isActive: true,
+          },
+        ],
+      },
+    },
+    action_block: [
+      { text: 'Швидке замовлення', isPrimary: true },
+      { text: 'Видалити', isDanger: true },
+      { text: 'Детальніше', isInfo: true },
+    ],
+    total: {
+      title: 'Всього',
+      item_list: [
+        { name: 'Ноут', price: '25 000 ₴' },
+        { name: 'Мишка', price: '25 000 ₴' },
+        { name: 'Клава', price: '25 000 ₴' },
+      ],
+      additional_info: [
+        { text: 'Всього товарів', value: '75 000 ₴' },
+        { text: 'Купони', value: 'Немає' },
+        { text: 'Доставка', value: 'Безкоштовно' },
+      ],
+      total_price: {
+        text: 'Всього товарів',
+        value: '75 000 ₴',
+      },
+      button: [
+        {
+          text: 'Підтвердити замовлення',
+          isPrimary: true,
+        },
+        {
+          text: 'Відмінити купони',
+>>>>>>> a862836392148a19c582a02d95e6cf3046be3f85
           isOutline: true,
         },
       ],
     },
+<<<<<<< HEAD
 
     goodsOtherBlock: {
       title: 'See other products',
@@ -2409,6 +2508,167 @@ router.get('/shopcart', function (req, res) {
       ],
     },
 
+=======
+    delivery: {
+      title: 'Доставка',
+      select: [
+        {
+          label: 'Місто доставки',
+          placeholder: 'Оберіть місто доставки',
+          options: [
+            { value: '1', text: 'Київ' },
+            { value: '2', text: 'Харків' },
+            { value: '3', text: 'Одеса' },
+            { value: '4', text: 'Львів' },
+            { value: '5', text: 'Дніпро' },
+            { value: '6', text: 'Донецьк' },
+          ],
+        },
+        {
+          label: 'Район доставки',
+          placeholder: 'Оберіть район доставки',
+          options: [
+            { value: '1', text: 'Голосіївський' },
+            { value: '2', text: 'Оболонський' },
+            { value: '3', text: 'Печерський' },
+            { value: '4', text: 'Дарницький' },
+            { value: '5', text: 'Деснянський' },
+            { value: '6', text: 'Подільський' },
+          ],
+        },
+      ],
+      delivery_type: [
+        {
+          type: 'Самовивіз з відділення Нової пошти',
+          value: 'За тарифами перевізника',
+        },
+        {
+          type: 'Кур’єром Нової пошти',
+          value: 'За тарифами перевізника',
+        },
+        {
+          type: 'Самовивіз з магазину',
+          value: 'Безкоштовно',
+        },
+        {
+          type: 'Доставка закордон',
+          value: 'За тарифами перевізника',
+        },
+      ],
+      payment: [
+        {
+          type: 'Оплата при отриманні',
+          description: 'За тарифами перевізника',
+        },
+        {
+          type: 'Оплатити зараз',
+        },
+      ],
+      contact: {
+        surname: {
+          lable: 'Прізвище',
+          placeholder: 'Іванов',
+          caption: 'Введіть прізвище',
+        },
+        name: {
+          lable: 'Ім’я',
+          placeholder: 'Іван',
+          caption: 'Введіть Ім’я',
+        },
+        phone: {
+          lable: 'Мобільний телефон',
+          placeholder: '+38 (XXX) XXX XX XX',
+          caption: 'Введіть телефон',
+        },
+        email: {
+          lable: 'Пошта',
+          placeholder: 'ivanivanov@ukr.net',
+          caption: 'Введіть Пошту',
+        },
+      },
+      coment: {
+        lable: 'Коментар',
+        placeholder: 'Я_хочу,_щоб',
+      },
+    },
+    coupon: {
+      select: {
+        available_coupon: {
+          lable: 'Наявні купони',
+          placeholder: 'Виберіть купон',
+          options: [
+            { value: '1', text: 'SEEYALATER' },
+            { value: '2', text: 'HOTEL10' },
+            { value: '3', text: 'DOWNLOAD25' },
+          ],
+        },
+        friend_coupon: {
+          lable: 'Купони за запрошених друзів',
+          placeholder: 'Виберіть купон',
+          options: [
+            { value: '1', text: 'TRAVEL5' },
+            { value: '2', text: '75VACA' },
+            { value: '3', text: '150VACA' },
+          ],
+        },
+      },
+      add: {
+        friend: {
+          lable: 'Запросіть друзів та отримайте ще купонів',
+          placeholder:
+            'Введіть контактні дані друзів через ;',
+          caption:
+            'Напишіть електронні адреси/телефон друзів через “;”',
+        },
+        colleague: {
+          lable: 'Запросити колег',
+          placeholder:
+            'Введіть контактні дані колег через ;',
+          caption:
+            'Напишіть електронні адреси/телефон колег через “;”',
+        },
+      },
+    },
+    quiz: {
+      title: 'Домоможи краще нам тебе зрозуміти',
+      preference: {
+        title:
+          'Який тип обладнання ви зацікавлені в придбанні?',
+        options: [
+          'Смартфони',
+          'Ноутбуки',
+          'Планшети',
+          'ПК',
+          'Телевізори',
+        ],
+      },
+      your_expirience: {
+        label: 'Який у Вас досвід користування ПК',
+      },
+      purchase_frequency: {
+        label: 'Як часто ви купуєте обладнання?',
+        placeholder: 'Оберіть варіант',
+        options: [
+          { value: '1', text: 'Раз в тиждень' },
+          { value: '2', text: 'Раз в місяць' },
+          { value: '3', text: 'Раз в рік' },
+        ],
+      },
+      factors: {
+        title:
+          'Які з наведених нижче факторів є для вас важливими при купівлі обладнання?',
+        options: [
+          'Ціна',
+          'Репутація бренду',
+          'Якість',
+          'Особливості',
+          'Гарантія',
+          'Доступність',
+          'Обслуговування клієнтів',
+        ],
+      },
+    },
+>>>>>>> a862836392148a19c582a02d95e6cf3046be3f85
     footer: [
       [
         {
