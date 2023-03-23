@@ -1,0 +1,72 @@
+<main>
+  
+  {{>shopheader}}
+
+  <div class='row py-3 ps-3 pe-3'>
+    <div class="col-6">
+      <h1>{{header.title}}</h1>
+    </div>
+    <div class="col-6 text-end mt-3">
+        <a type="button" class="btn btn-outline-dark" href={{header.button.link}}>{{header.button.text}}</a>
+    </div>
+  </div>
+  <br><hr><br>
+ 
+
+  {{#each goodsBlock}}
+    {{>cartGoodsItem}}
+  {{/each}}
+<br><hr><br>
+<div class="row">
+  <div class="col-8">
+    <h3>{{total.title}}</h3>
+    <h1>{{total.amount}}</h1>
+    <p>{{total.delivery}}</p>
+  </div>
+  <div class="col-4">
+    {{#each total.buttons}}
+      {{#if isSuccess}}
+        <a type="button" class="btn btn-success my-2" href={{link}}>{{text}}</a>
+      {{/if}}
+      {{#if isOutline}}
+        <a type="button" class="btn btn-outline-success my-2" href={{link}}>{{text}}</a>
+      {{/if}}
+    {{/each}}
+  </div>
+</div>
+<br><hr><br>
+<div class="text-center">
+  <h2>{{goodsOtherBlock.title}}</h2>
+</div>
+
+<div class="row">
+  {{#each goodsOtherBlock.cards}}
+     {{>shopcard}}
+  {{/each}}
+   
+</div>
+<br><hr><br>
+<div class="card text-bg-dark">
+  <div class="card-body ">
+    <div class="row">
+      <div class=" col-6">
+          <h2>{{subscribe.header}}</h2>
+          <p>{{subscribe.description}}</p>
+      </div>
+       {{#each subscribe.buttons}}
+        <div class=" col-3">
+        
+          <a type="button" href={{link}} class="btn btn-primary my-5">{{text}}</a>
+       
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<br><hr>
+  
+  {{>shopfooter}}
+
+
+</main>
