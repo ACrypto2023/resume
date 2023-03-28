@@ -1,0 +1,192 @@
+<main>
+  
+  {{>shopheader}}
+
+  <h1>{{header}}</h1>
+
+  <div>
+    {{#with purchase}}
+      
+        <ul class="nav nav-tabs">
+          {{#each tabs}}
+            <li class="nav-item">
+              {{#if @first}}
+              <a class="nav-link active" aria-current="page" href="#">{{this}}</a>
+               {{else}}
+               <a class="nav-link " aria-current="page" href="#">{{this}}</a>
+               {{/if}}
+                
+            
+            
+            
+          {{/each}}
+        </ul>
+        <div class="row">
+                {{#with actionBlock}}
+                <div class="col-3 m-3">
+                    
+                    <input  class='form-control ' placeholder={{input.placeholder}}>
+                  
+                </div>
+                                
+                <div class="col-7 my-3">
+                    {{#each buttons}}
+                      {{#if isSuccess}}
+                        <a type="button" href={{link}} class="btn btn-success">{{text}}</a>
+                      {{/if}}
+                      {{#if isOutline}}
+                        <a type="button" href={{link}}  class="btn btn-outline-success">{{text}}</a>
+                      {{/if}}
+                      {{#if isDanger}}
+                        <a type="button" href={{link}}  class="btn btn-outline-danger">{{text}}</a>
+                      {{/if}}
+
+                    {{/each}}
+                    
+                </div>
+                {{/with}}
+        </div>
+        <br><hr>
+        
+        {{#each itemList}}
+          {{>purchaseItem}}       
+        {{/each}}
+        <hr>
+      
+    {{/with}}
+  </div>
+  <div>
+    {{#with userInfo}}
+      <h2>{{title}}</h2>
+      <div class="card">
+        <div class="card-body">
+          
+          {{#with profileData}}
+          <h3>{{title}}</h3>
+          <div class="row">
+            <div class="col-4">
+                 
+                <div>{{fullName.surname.title}}</div>
+                <h5>{{fullName.surname.value}}</h5>
+            </div>
+            <div class="col-4">
+                <div>{{fullName.name.title}}</div>
+                <h5>{{fullName.name.value}}</h5>
+            </div>
+            <div class="col-4">
+                  <div>{{fullName.middleName.title}}</div>
+                  <h5>{{fullName.middleName.value}}</h5>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+                 
+                <div>{{otherInfo.birthday.title}}</div>
+                <h5>{{otherInfo.birthday.value}}</h5>
+            </div>
+            <div class="col-4">
+                <div>{{otherInfo.sex.title}}</div>
+                <h5>{{otherInfo.sex.value}}</h5>
+            </div>
+            <div class="col-4">
+                  <div>{{otherInfo.language.title}}</div>
+                  <h5>{{otherInfo.language.value}}</h5>
+              </div>
+          </div>
+          
+           {{/with}}
+          <div class="row mt-3">
+                {{#each buttons}}
+                          <div class="col-4">
+                              {{#if isPrimary}}
+                              <a type="button" href={{link}} class="btn btn-primary">{{text}}</a>
+                              {{/if}}
+                              {{#if isSecondary}}
+                              <a type="button" href={{link}} class="btn btn-outline-secondary">{{text}}</a>
+                               {{/if}}
+                              {{#if isDanger}}
+                              <a type="button" href={{link}} class="btn btn-outline-danger">{{text}}</a>
+                               {{/if}}
+                          </div>
+                {{/each}}          
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card mt-2">
+        <div class="card-body">
+          
+          {{#with recipients}}
+          <h3>{{title}}</h3>
+          <div class="row">
+            {{#each users}}
+              <div class="col-4">
+                  
+                  <h5>{{name}}</h5>
+                  <div>{{phone}}</div>
+                  <a type="button" href={{button.link}} class="btn btn-primary mt-3">{{button.text}}</a>
+              </div>
+            {{/each}}
+            
+          </div>
+          {{/with}}
+        </div>
+
+      </div>
+
+      <div class="card mt-2">
+        <div class="card-body">
+          
+          {{#with contacts}}
+              <h3>{{title}}</h3>
+              <div class="row">
+                {{#with contactData}}
+                  <div class="col-4">
+                      <div>{{phone.title}}</div>
+                      <h6>{{phone.value}}</h6>
+                  </div>
+                  <div class="col-4">
+                      <div>{{additionalPhone.title}}</div>
+                      <h6>{{additionalPhone.value}}</h6>
+                  </div>
+                  <div class="col-4">
+                      <div>{{email.title}}</div>
+                      <h6>{{email.value}}</h6>
+                  </div>
+                {{/with}}
+                
+              </div>
+              <div class="row">
+                {{#each buttons}}
+                          <div class="col-4">
+                              {{#if isPrimary}}
+                              <a type="button" href={{link}} class="btn btn-primary">{{text}}</a>
+                              {{/if}}
+                              {{#if isSecondary}}
+                              <a type="button" href={{link}} class="btn btn-outline-secondary">{{text}}</a>
+                               {{/if}}
+                              {{#if isDanger}}
+                              <a type="button" href={{link}} class="btn btn-outline-danger">{{text}}</a>
+                               {{/if}}
+                          </div>
+                {{/each}}     
+
+
+              </div>
+          {{/with}}
+        </div>
+
+      </div>
+      
+      
+    {{/with}}
+  </div>
+  <br><hr>
+
+  
+  
+  {{>shopfooter}}
+
+
+</main>
