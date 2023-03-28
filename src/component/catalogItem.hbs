@@ -1,0 +1,52 @@
+<div class="card mb-2">
+                  <img src={{img}} class="card-img-top" alt={{name}}>
+                  <div class="card-body">
+                      <div class="mb-3">
+                        {{#if isHot}}
+                          
+                            <span
+                              class='bage text-bg-warning ms-1 rounded-pill'> &nbsp Hot  &nbsp 
+                            </span>
+                          
+                        {{/if}}
+                        {{#if isNew}}
+                          
+                            <span
+                              class='bage text-bg-info ms-1 rounded-pill'
+                            > &nbsp Нове &nbsp 
+                            </span>
+                        
+                        {{/if}}
+                      </div> 
+                    {{#if isFast}}
+                      <a type="button" target="_blank" class="btn btn-success  btn-sm my-1" href='#'>Швидка доставка</a>
+                    {{/if}}
+                    {{#if isFree}}
+                      <a type="button" target="_blank" class="btn btn-secondary  btn-sm my-1" href='#'>Безкоштовна доставка</a>
+                    {{/if}}
+                    <h5 class="mt-2">{{name}}</h>
+                    <div class="text-muted">{{review.amount}} {{review.text}}</div>
+                    <h5 class="my-2">{{price}}</h5>
+                    <div class="mb-2">{{delivery}}</div>
+                    {{#each buttons}}
+                      {{#if isPrimary}}
+                        <a type="button" target="_blank" class="btn btn-primary mt-2" href={{link}}>{{text}}</a>
+                      {{/if}}
+                      {{#if isSecondary}}
+                        <a type="button" target="_blank" class="btn btn-secondary mt-2" href={{link}}>{{text}}</a>
+                      {{/if}}
+                    {{/each}}
+                    <div class="mt-2">
+                      <ul>
+                          {{#each characteristics}}
+                            <li>
+                              {{title}}: {{value}}
+                            </li>
+                          {{/each}}
+                        </ul>
+                    </div>   
+                        
+                    
+
+                  </div>
+                </div>

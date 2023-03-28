@@ -1,0 +1,121 @@
+<main>
+  
+  {{>shopheader}}
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      {{#each breadcrumb}}
+          {{#if url}}
+            <li class="breadcrumb-item"><a href={{url}}>{{name}}</a></li>
+          {{else}}
+            <li class="breadcrumb-item active"><a href='#'>{{name}}</a></li>
+          {{/if}}
+      {{/each}}
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav>
+
+  <h1>{{header}}</h1>
+  <div class="row mt-4">
+    {{#each sortBlock}}
+      <div class=" col-3">
+        <select class="form-select" >
+          <option selected>{{placeholder}}</option>
+            {{#each options}}
+              <option value={{value}}>{{text}}</option>
+            {{/each}}
+          
+        </select>
+      </div>
+    {{/each}}
+  </div>
+  
+  <div class="row mt-5">
+    {{#with filterBlock}}
+    <div class="col-4">
+      <div class="card">
+        <div class=" card-body">
+          <div>{{sellers.title}}</div>
+            {{#each sellers.list}}
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox"  >
+                <label class="form-check-label">
+                  {{value}}
+                </label>
+              </div>
+            {{/each}}
+            <hr>
+            <div> {{brands.title}}</div>
+            <input class="form-control mt-2" type="text" placeholder={{brands.input.placeholder}} >
+            {{#each brands.options}}
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox"  >
+                <label class="form-check-label">
+                  {{value}}
+                </label>
+              </div>
+            {{/each}}
+            <hr>
+            <div> {{price.title}}</div>
+              <div class="row">
+                <div class="col-4">
+                    <input class="form-control mt-2 mx-0" type="text" placeholder={{price.range.from}} >
+                </div>
+                <div class="col-4">
+                    <input class="form-control mt-2 mx-0" type="text" placeholder={{price.range.to}} >
+                </div>
+                <div class="col-4">
+                    <a type="button" href={{price.button.link}} target="_blank" class="btn btn-outline-secondary mt-2">Ok</a>
+                </div>
+
+              </div>
+            
+            {{#each button}}
+            <hr>
+            <div>{{title}}</div>
+              {{#each options}}
+              <div class="form-check mt-2">
+                  <input class="form-check-input" type="checkbox"  >
+                  <label class="form-check-label">
+                    {{value}}
+                  </label>
+              </div> 
+              {{/each}}
+            
+            {{/each}}
+
+              
+              
+        </div> 
+      </div>
+    </div>
+    {{/with}}
+   
+      <div class="col-8">
+          
+          <div class="row">
+             {{#each goodsList}}
+            <div class="col-6">
+                {{>catalogItem}}
+            </div>
+             {{/each}}
+          </div>  
+      </div> 
+      
+    
+  </div>
+
+      
+
+
+  <br><br>
+   {{>shopaction}}
+   <br><hr>
+
+  
+  
+  {{>shopfooter}}
+
+
+</main>
