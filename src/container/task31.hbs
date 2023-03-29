@@ -1,4 +1,4 @@
-<main>
+<main class='ms-5'>
  {{#with navigation }}
  {{#each links}}
  <a href="{{href}}" class='btn text-primary'>{{text}}</a>
@@ -8,41 +8,40 @@
    {{/with}}
    <br>
    <hr>
-   <br>
-   <h1>{{header.title}}</h1>
-   <br>
-   <h6 class='text-muted'>{{header.description}}</h6><br>
-   <a type='button' class='btn btn-primary' href="{{header.button.link}}" target="_blank">{{header.button.text}}</a>
-   <br><br>
+   
+   <h1 class="mt-5">{{header.title}}</h1>
+   
+   <h6 class='text-muted mt-4'>{{header.description}}</h6>
+   <a type='button' class='btn btn-primary my-4' href="{{header.button.link}}" target="_blank">{{header.button.text}}</a>
+   
    <hr>
-   <br>
+   
               
    {{#with city}}
-   <h2>{{title}}</h2>
-   <br>
+   <h2 class="mt-4">{{title}}</h2>
+  
       <div class="row">
       {{#each cards}}
         
             <div class="col-6">
-              <div class="card">
+              <div class="card mt-4 my-2">
                   <img src="{{picture.src}}" class="card-img-top" alt="{{picture.alt}}">
                   <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{description}}</p>
                     <a href={{button.href}} class="btn btn-primary">{{button.text}}</a><br>
                   </div>
-               </div><br> 
+               </div>
             </div>
         
       {{/each}}
       </div> 
 {{/with}}
 
-<br> <hr>
-<br>
-   <h2>{{winner.title}}</h2>
-   <br>
-    <table class="table">
+
+
+   <h2 class="my-4">{{winner.title}}</h2>
+    <table class="table mb-5">
     <thead>
       <tr>
         {{#each winner.table.head}}
@@ -74,12 +73,12 @@
       
 
     </tbody>
-   </table>
-   <br>
+    </table>
+   
    <hr>
-   <br>
-   <h2>{{gallery.title}}</h2>
-   <br>
+   
+   <h2 class="my-4">{{gallery.title}}</h2>
+   
    <div class="row">
          {{#each gallery.cards}}
           <div class="col-4">
@@ -96,30 +95,30 @@
             </div>
           {{/each}}
      </div>
-    <br>
-<div class='display-3 '><b>{{relaxion.title}}</b></div><br>
-<div class="row">
-   {{#each relaxion.cards}}
-    <div class="col-5 ">
-      <div class='card text-bg-secondary' >
-          <ul class=" list-group text-bg-secondary">
-                  <li class=" card-title list-group-item text-bg-secondary">{{header}}</li>
-                  <li class="list-group-item text-bg-secondary">
-                    <h5>{{title}}</h5>
-                    <br>
-                    {{description}}
-                  </li>
-                  
-                                
-           </ul>
-      </div><br>
+    
+<div class='display-3 mt-4'><b>{{relaxion.title}}</b></div><br>
+<div class="row mb-4">
+    {{#each relaxion.cards}}
+      <div class="col-5 ">
+        <div class='card text-bg-secondary ' >
+            <ul class=" list-group text-bg-secondary">
+                    <li class=" card-title list-group-item text-bg-secondary">{{header}}</li>
+                    <li class="list-group-item text-bg-secondary">
+                      <h5>{{title}}</h5>
+                     
+                      {{description}}
+                    </li>
+                    
+                                  
+            </ul>
+        </div><br>
       </div>
     {{/each}}
 
     </div>
 
 </div>
-<br><hr><br>
+<hr><br>
 <div class="row">
       {{#each rest.cards}}
         
@@ -146,11 +145,11 @@
       </div>  
     
 
-<div class='display-3 '><b>{{proposition.title}}</b></div><br>
-<div class="row">
+<div class='display-3 mt-4'><b>{{proposition.title}}</b></div><br>
+<div class="row mb-4">
    {{#each proposition.card}}
     <div class="col-5 ">
-      <div class='card text-bg-warning' >
+      <div class='card text-bg-warning mb-4' >
           <ul class=" list-group ">
                   <li class=" card-title list-group-item text-bg-warning">{{header}}</li>
                   <li class="list-group-item text-bg-warning">
@@ -159,15 +158,15 @@
                     {{description}}
                             
            </ul>
-      </div><br>
+      </div>
       </div>
     {{/each}}
 
     </div>
 
 </div>
-<br><hr><br>
- <h5 class='text-muted'>{{footer.title}}</h5><br>
+<hr>
+ <h5 class='mt-4'>{{footer.title}}</h5><br>
   <div class="row">
     <div class="col-4 ">
             <div class="card card border-0">
