@@ -1,28 +1,27 @@
 
 
-<div>
+<div class='ms-5'>
   {{#with person}}
-    <div><h1>{{name}}</h1></div>
-    <br />
-    <div>Age: {{age}} </div>
-    <br />
-    <div>Gender: {{gender}}</div>
-    <br />
+    <div class="mt-4"><h1>{{name}}</h1></div>
+    
+    <div class="mt-4">Age: {{age}} </div>
+   
+    <div class="my-4">Gender: {{gender}}</div>
     <hr />
-    <br />
+   
     {{#with address}}
-      <div><address>Address:
+      <div class="my-4 "><address>Address:
           {{street}},
           {{city}},
           {{state}},
           {{zip}},
           {{country}}</address></div>
     {{/with}}
-    <br />
+    
     <hr />
-    <br />
-    <h2>Education</h2>
-    <ul>
+    
+    <h2 class="my-4">Education</h2>
+    <ul class="my-4">
       <li>
         {{#each education}}
           <div>Degree: {{degree}}</div>
@@ -36,19 +35,19 @@
         {{/each}}
       </li>
     </ul>
-    <br />
+    
     <hr />
-    <br />
-    <h2>Work</h2>
+    
+    <h2 class="my-4">Work</h2>
     <ul>
       <li>
         {{#each workExperience}}
-          <h3>Company: {{company}}</h3>
+          <h3 class="my-4">Company: {{company}}</h3>
           
-          <div>Title: {{title}}</div>
-          <br />
-          <div>From: <date>{{startDate}}</date> to: <date></date>{{endDate}}</date></div>
-          <br />
+          <div class="my-4">Title: {{title}}</div>
+         
+          <div class="mt-4">From: <date>{{startDate}}</date> to: <date></date>{{endDate}}</date></div>
+          
             <ul>
                 {{#each responsibilities}}
                 <li>
@@ -56,45 +55,45 @@
                   </li>
                 {{/each}}
             </ul>
-          <br />
-          <div>Founded: <date>{{year_founded}}</date></div>
-          <br />
-          <div>Industry: {{industry}}</div>
-          <br />
-          <div> <h4>Employees:</h4>
+         
+          <div class="my-4">Founded: <date>{{year_founded}}</date></div>
+        
+          <div class="my-4">Industry: {{industry}}</div>
+        
+          <div class="my-4"> <h4>Employees:</h4>
             
-            <ul>
+            <ul class="my-2">
             {{#each employees}}
-            <li>
+            <li class="my-2">
               {{name}},
               {{position}} in
               {{department}} department
-              <br />
+             
               Projects:
-                <ul>
+                <ul class="my-2">
                 {{#each projects}}
                   <li>
                    {{name}}
                    ({{description}}),
                    {{status}}
-                   <br />
+                  
                    Teams:
-                  <ul>
+                  <ul class="mb-3">
                     {{#each teams}}
                     <li>
-                    {{team_name}}<br />
+                    {{team_name}}
                       Team leader: 
                       {{#with team_leader}}
                         {{name}} ({{title}}), email: {{email}}
                       {{/with}}
                       Team members:
-                      <ul>
+                      <ul class="mb-3">
                       {{#each team_members}}
                       <li>
-                        {{name}} ({{title}})  <br />
-                        email: {{email}} <br />
+                        {{name}} ({{title}})  
+                        email: {{email}} 
                           Skills:
-                          <ul>
+                          <ul class="mb-3">
                           {{#each skills}}
                             <li>
                               {{this}}
@@ -102,12 +101,12 @@
                           {{/each}}
                           </ul>
                           Projects:
-                          <ul>
+                          <ul  class="mb-3">
                           {{#each projects}}
                             <li>
-                              {{name}} ({{description}}) <br />
+                              {{name}} ({{description}}) 
                                 Technologies:
-                                <ul>
+                                <ul  class="mb-3">
                                   {{#each technologies}}
                                   <li>
                                         {{this}}
@@ -115,7 +114,7 @@
                                   {{/each}}
                                 </ul>
                                Team members: 
-                               <ul>
+                               <ul  class="mb-3">
                                  {{#each team_members}}  
                                 <li>
                                   {{name}} ({{title}})

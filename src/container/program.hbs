@@ -1,26 +1,26 @@
-<div>
+<div class='ms-5 mt-5'>
 
-  <div><h1>Program</h1></div>
+  <div class="mt-5 "><h1>Program</h1></div>
   <div>
-    {{#with program}}
-      <h2>Excursion</h2>
+    {{#with program}} 
+      <h2 class="mt-4">Excursion</h2>
       {{#with excursion}}
-        <h3>{{name}}</h3>
+        <h3 class="mt-4">{{name}}</h3>
         {{#with location}}
-          Location:
+          <div class="mt-4">Location:
           {{city}},
-          {{country}}
+          {{country}}</div>
         {{/with}}
         <date>{{date}}</date>
         <ul>
-        <h4>Program:
+        <h4 class="mt-4">Program:
           {{#each program}} </h4>
           <li>
-          Name: {{name}}<br />
-          Type: {{type}}<br />
-          Duration: {{duration}}<br />
+          <div class="mt-2">Name: {{name}}</div>
+          <div class="mt-2">Type: {{type}}</div>
+          <div class="mt-2">Duration: {{duration}}</div>
             
-             <h5>Details:</h5>
+             <h5 class="mt-4">Details:</h5>
             
             {{#with details}}
               

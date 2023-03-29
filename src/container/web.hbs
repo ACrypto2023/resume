@@ -1,23 +1,23 @@
-<div>
+<div class='ms-5 mt-5'>
 
   <div><h1>Web</h1></div>
   <div>
     {{#with web}}
-      <h2>Languages:</h2>
-      <ul>
+      <h2 class='mt-4'>Languages:</h2>
+      <ul class='my-4'>
         {{#each languages}}
-          <li>
+          <li class='my-2'>
             {{name}}, version:
-            {{version}}, ({{description}})<br /><br />
+            {{version}}, ({{description}})
             {{#if elements}}
               <ul>
 
-                Elements:
+                <div class='mt-4'>Elements:</div>
                 {{#each elements}}
-                  <li>
+                  <li class='my-2'>
                     {{name}}
                     ({{description}})
-                    <ul>
+                    <ul class='mt-2'>
                       {{#each attributes}}
                         <li>
                           {{name}}
@@ -29,7 +29,7 @@
                 {{/each}}
               </ul>
             {{/if}}
-            <br />
+
           </li>
         {{/each}}
       </ul>

@@ -443,7 +443,7 @@ router.get('/program', function (req, res) {
   res.render('program', {
     layout: 'basic',
     page: {
-      title: 'Bio page',
+      title: 'Program page',
     },
     program: {
       excursion: {
@@ -1122,6 +1122,10 @@ router.get('/bootstrap', function (req, res) {
     page: {
       title: 'Bootstrap',
     },
+
+    page: {
+      title: 'Bootstrap',
+    },
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
@@ -1137,6 +1141,9 @@ router.get('/task21', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task21', {
     layout: 'basic',
+    page: {
+      title: 'Task21',
+    },
     heading: {
       main: {
         title: 'JavaScript',
@@ -1213,6 +1220,9 @@ router.get('/task22', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
     layout: 'basic',
+    page: {
+      title: 'Task22',
+    },
     page_header: {
       title: 'InnovaMind',
       description: 'Welcome to our wonderful community',
@@ -1277,6 +1287,9 @@ router.get('/task31', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task31', {
     layout: 'basic',
+    page: {
+      title: 'Task31',
+    },
     navigation: {
       links: [
         {
@@ -1537,6 +1550,9 @@ router.get('/shophome', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
     layout: 'shop',
+    page: {
+      title: 'Shophome',
+    },
     navigation: {
       links: [
         {
@@ -1830,6 +1846,9 @@ router.get('/shopproduct', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopproduct', {
     layout: 'shop',
+    page: {
+      title: 'Shopproduct',
+    },
     navigation: {
       links: [
         {
@@ -2050,6 +2069,9 @@ router.get('/shopnews', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopnews', {
     layout: 'shop',
+    page: {
+      title: 'Shopnews',
+    },
     navigation: {
       links: [
         {
@@ -2265,6 +2287,9 @@ router.get('/shoporder', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shoporder', {
     layout: 'shop',
+    page: {
+      title: 'Shoporder',
+    },
     navigation: {
       links: [
         {
@@ -2635,6 +2660,9 @@ router.get('/shopcart', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
     layout: 'shop',
+    page: {
+      title: 'Shopcart',
+    },
     navigation: {
       links: [
         {
@@ -2887,6 +2915,9 @@ router.get('/shopprofile', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopprofile', {
     layout: 'shop',
+    page: {
+      title: 'Shopprofile',
+    },
     navigation: {
       links: [
         {
@@ -3187,6 +3218,9 @@ router.get('/shopreview', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopreview', {
     layout: 'shop',
+    page: {
+      title: 'Shopreview',
+    },
     navigation: {
       links: [
         {
@@ -3478,6 +3512,9 @@ router.get('/shopcatalog', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcatalog', {
     layout: 'shop',
+    page: {
+      title: 'Shopcatalog',
+    },
     navigation: {
       links: [
         {
@@ -3846,5 +3883,17 @@ router.get('/shopcatalog', function (req, res) {
 })
 
 // ================================================================
+router.get('/index', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {
+    layout: 'index',
+    page: {
+      title: 'Index',
+    },
+    page: {
+      title: 'Resume project',
+    },
+  })
+})
 // ================================================================
 module.exports = router

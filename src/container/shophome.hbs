@@ -2,16 +2,12 @@
   <div class='card py-3 ps-3 pe-3'>
     {{#with navigation}}
     <div class='nav'>
-      
-        
         <div class="col-5">
           <div class="nav-item">
           <h2>{{Logo}} </h2>
           </div>
 
         </div>
-
-
         <div class="col-7">
           <div class="nav">
           {{#each links}}
@@ -20,15 +16,9 @@
             </div>
           {{/each}}
           </div>
-
         </div>
-      
-      
-      
-      
     </div>
     {{/with}}
-
   </div>
   <br />
   <h2 class='text-center'>{{newsBlock.title}}</h2>
@@ -49,10 +39,8 @@
                   class='bage text-bg-danger rounded-pill'
                 >New</small></span>
               {{/if}}
-
             </h6>
           </div>
-
           <div
             class='card-body text-bg-dark ps-3'
           >{{description}}
@@ -66,7 +54,6 @@
   <br />
   <ul class='nav nav-tabs'>
     {{#each goodsBlock.tabs}}
-
       <li class='nav-item'>
         <a
           {{#if isActive}}
@@ -77,12 +64,8 @@
           aria-current='page'
           href='#'
         >{{text}}</a>
-
       </li>
-
-
-      
-    {{/each}}
+     {{/each}}
     <div class="row gy-4 gx-2">
             {{#each goodsBlock.cards}}
             <div class="col-4">
@@ -109,24 +92,18 @@
       </div>
   </ul>
   <br>
-
   <br>
   <div class='card py-2 ps-2 pe-1 text-bg-dark'>
     {{#with subscribe}}
     <div class='nav'>
-      
-        
-        <div class="col-6">
+         <div class="col-6">
           <div class="nav-item">
           <h2>{{header}}</h2>
           </div>
           <div>
             <h6>{{description}}</h6>
           </div>
-
         </div>
-
-
         <div class="col-6">
           <div class="nav">
           {{#each buttons}}
@@ -135,248 +112,22 @@
             </div>
           {{/each}}
           </div>
-
         </div>
-      
-      
-      
-      
-    </div>
+     </div>
     {{/with}}
-
   </div>
   <br>
   <hr>
   <br>
-  <div class='card py-2 ps-2 pe-1 text-center text-bg-success'>
-    {{#with service}}
-   
-          <h2>{{title}}</h2>
-          
-          
+    <div class='card py-2 ps-2 pe-1 text-center text-bg-success'>
+      {{#with service}}
+            <h2>{{title}}</h2>
             <h6>{{description}}</h6>
-          
-          
-          {{#each buttons}}
-            <div class='nav-item mx-2 my-2'>
-               <a type='button'  class='btn btn-primary ' href={{link}} target="_blank">{{text}}</a>
-            </div>
-          {{/each}}
-         
-
-        </div>
-      
-      
-      
-      
-    
+            {{#each buttons}}
+              <div class='nav-item mx-2 my-2'>
+                <a type='button'  class='btn btn-primary ' href={{link}} target="_blank">{{text}}</a>
+              </div>
+            {{/each}}
     {{/with}}
-
-  </div>
-
-
-
-  
-  {{!-- {{#with navigation }}
- {{#each links}}
- <a href="{{href}}" class='btn text-primary'>{{text}}</a>
- {{/each}}
-  
-   <a type='button'  class='btn btn-primary' href="{{button.href}}" target="_blank">{{button.text}}</a>
-   {{/with}}
-   <br>
-   <hr>
-   <br>
-   <h1>{{header.title}}</h1>
-   <br>
-   <h6 class='text-muted'>{{header.description}}</h6><br>
-   <a type='button' class='btn btn-primary' href="{{header.button.link}}" target="_blank">{{header.button.text}}</a>
-   <br><br>
-   <hr>
-   <br>
-              
-   {{#with city}}
-   <h2>{{title}}</h2>
-   <br>
-      <div class="row">
-      {{#each cards}}
-        
-            <div class="col-6">
-              <div class="card">
-                  <img src="{{picture.src}}" class="card-img-top" alt="{{picture.alt}}">
-                  <div class="card-body">
-                    <h5 class="card-title">{{title}}</h5>
-                    <p class="card-text">{{description}}</p>
-                    <a href={{button.href}} class="btn btn-primary">{{button.text}}</a><br>
-                  </div>
-               </div><br> 
-            </div>
-        
-      {{/each}}
-      </div> 
-{{/with}}
-
-<br> <hr>
-<br>
-   <h2>{{winner.title}}</h2>
-   <br>
-    <table class="table">
-    <thead>
-      <tr>
-        {{#each winner.table.head}}
-        <th>
-          {{this}}
-        </th>
-        {{/each}}
-        </tr>
-    </thead>
-    <tbody>
-        {{#each winner.table.user}}
-      <tr>
-        <th>
-          {{place}}
-        </th>
-        <th>
-          {{name}}
-        </th>
-        <th>
-          {{surname}}
-        </th>
-        <th>
-          {{nickname}}
-        </th>
-        
-      </tr>
-      {{/each}}
-      
-      
-
-    </tbody>
-   </table>
-   <br>
-   <hr>
-   <br>
-   <h2>{{gallery.title}}</h2>
-   <br>
-   <div class="row">
-         {{#each gallery.cards}}
-          <div class="col-4">
-                <div class='card'>
-                        
-                                <ul class="card-title list-group text-bg-light">{{name}}
-                                                {{#each items}}
-                                                <li class="list-group-item">{{this}}</li>
-                                                {{/each}}
-                                       
-                                </ul>
-                       
-                </div>
-            </div>
-          {{/each}}
-     </div>
-    <br>
-<div class='display-3 '><b>{{relaxion.title}}</b></div><br>
-<div class="row">
-   {{#each relaxion.cards}}
-    <div class="col-5 ">
-      <div class='card text-bg-secondary' >
-          <ul class=" list-group text-bg-secondary">
-                  <li class=" card-title list-group-item text-bg-secondary">{{header}}</li>
-                  <li class="list-group-item text-bg-secondary">
-                    <h5>{{title}}</h5>
-                    <br>
-                    {{description}}
-                  </li>
-                  
-                                
-           </ul>
-      </div><br>
-      </div>
-    {{/each}}
-
     </div>
-
-</div>
-<br><hr><br>
-<div class="row">
-      {{#each rest.cards}}
-        
-          <div class="col-6">
-            
-
-                <div class="card text-center ">
-                  <div class="card-header text-bg-light text-muted">
-                   <h6> {{header }}</h6>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-muted">{{title}}</h5>
-                    <p class="card-text">{{description}}</p>
-                    <a href="#" class="btn btn-primary">{{button}}</a>
-                  </div>
-                  <div class="card-footer text-muted">
-                   <h6> {{footer}}</h6>
-                  </div>
-                </div>
-
-          </div>
-        
-      {{/each}}
-      </div>  
-    
-
-<div class='display-3 '><b>{{proposition.title}}</b></div><br>
-<div class="row">
-   {{#each proposition.card}}
-    <div class="col-5 ">
-      <div class='card text-bg-warning' >
-          <ul class=" list-group ">
-                  <li class=" card-title list-group-item text-bg-warning">{{header}}</li>
-                  <li class="list-group-item text-bg-warning">
-                    <h5>{{title}}</h5>
-                    <br>
-                    {{description}}
-                            
-           </ul>
-      </div><br>
-      </div>
-    {{/each}}
-
-    </div>
-
-</div>
-<br><hr><br>
- <h5 class='text-muted'>{{footer.title}}</h5><br>
-  <div class="row">
-    <div class="col-4 ">
-            <div class="card card border-0">
-            {{#each footer.navigation}}
-              
-              <a  class='btn btn-outline-primary' href={{href}} target="_blank">{{text}}</a><br>
-              
-              
-              {{/each}}
-              </div>
-      </div>
-      <div class="col-4 ">
-            <div class="card card border-0">
-            {{#each footer.socialMedia}}
-              
-              <a  class='btn btn-outline-dark' href={{link}} target="_blank">{{name}}</a><br>
-              
-              
-              {{/each}}
-              </div>
-      </div>
-      <div class="col-4 ">
-            <div class="card card border-0">
-            {{#each footer.partners}}
-              
-              <a  class='btn btn-outline-info' href={{link}} target="_blank">{{name}}</a><br>
-              
-              
-              {{/each}}
-              </div>
-      </div>
-  </div> --}}
-
-</main>
+  </main>

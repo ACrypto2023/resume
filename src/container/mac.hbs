@@ -1,4 +1,4 @@
-<div>
+<div class='ms-5'>
   <main>
     <section>
       {{> title data='Notebooks' big=true}}
@@ -8,38 +8,38 @@
           <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9vayUyMHByb3xlbnwwfHwwfHw%3D&w=1000&q=80" class="card-img-top" alt="Apple MacBook Pro">
           <div class="card-body">
             <h5 class="card-title">{{name}}</h5>
-            <p class="card-text"><div>{{description}}</div> <br>
-      <div>price: {{price}}</div><br>
-      <div>category: {{category}}</div><br>
-      <div>
-        <b>Features:</b><br>
+            <p class="card-text mt-2"><div>{{description}}</div> 
+      <div class="mt-4">price: {{price}}</div>
+      <div class="mt-4">category: {{category}}</div>
+      <div class="mt-4">
+        <b>Features:</b>
         {{#with features}}
           {{#with processor}}
-          processor: {{brand}}, {{model}}, {{speed}}, {{cores}} cores, {{cache}} cache <br>
+          processor: {{brand}}, {{model}}, {{speed}}, {{cores}} cores, {{cache}} cache </div>
           {{/with}}
           {{#with memory}}
-          memory: {{type}}, {{size}}, {{speed}} <br>
+         <div class="mt-1"> memory: {{type}}, {{size}}, {{speed}} </div>
           {{/with}}
           {{#with storage}}
-          storage: {{type}}, {{size}} <br>
+          <div class="mt-1">storage: {{type}}, {{size}} </div>
           {{/with}}
           {{#with display}}
-          display: {{size}}, {{resolution}}, {{technology}}, {{color_space}}, {{brightness}}, {{refresh_rate}}<br>
+          <div class="mt-1">display: {{size}}, {{resolution}}, {{technology}}, {{color_space}}, {{brightness}}, {{refresh_rate}}</div>
           {{/with}}
           {{#with graphics}}
-          graphics: {{brand}}, {{model}}, {{memory}} <br>
+        <div class="mt-1">  graphics: {{brand}}, {{model}}, {{memory}} </div>
           {{/with}}
           
           ports:
           <ul>
           {{#each ports}}
           <li>
-            type: {{type}}<br>
-            count: {{count}}<br>
+            <div class="mt-1">type: {{type}}</div>
+            <div class="mt-1">count: {{count}}</div>
               <ul>
                 {{#each features}}
                   <li>
-                  {{this}}<br>
+                  <div class=""> {{this}}</div>
                   </li>
                 {{/each}}
               </ul>
@@ -48,19 +48,19 @@
           {{/each}}
           </ul>
           {{#with battery}}
-          battery: {{type}}, {{capacity}}, {{life}}<br>
+          <div class="mt-1">battery: {{type}}, {{capacity}}, {{life}}</div>
           {{/with}}
-          weight: {{weight}}<br>
+           <div class="mt-1">weight: {{weight}}</div>
           {{#with dimensions}}
-          dimensions: height: {{height}}, width: {{width}}, depth: {{depth}}<br>
+           <div class="mt-1">dimensions: height: {{height}}, width: {{width}}, depth: {{depth}}</div>
           {{/with}}
-          operating system: {{operating_system}}<br>
-          accessories: 
+           <div class="mt-1">operating system: {{operating_system}}</div>
+           <div class="mt-1">accessories: </div>
           <ul>
             {{#each accessories}}
               <li>
-                name: {{name}}<br>
-                price: {{price}}<br><br>
+                <div class="mt-1">name: {{name}}</div>
+                 <div class=" mb-2">price: {{price}}</div>
               </li>
             {{/each}}
           </ul>
